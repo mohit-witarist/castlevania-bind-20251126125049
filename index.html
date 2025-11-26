@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gothic Nightmare - Castlevania Style Platformer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="game-container">
+    <div class="crt-overlay"></div>
+    <div class="scanlines"></div>
+    <canvas id="gameCanvas"></canvas>
+    <div id="title-screen" class="screen">
+      <h1>GOTHIC NIGHTMARE</h1>
+      <p class="subtitle">A Tale of Darkness</p>
+      <div class="menu">
+        <button id="startBtn">START GAME</button>
+        <button id="controlsBtn">CONTROLS</button>
+        <button id="themeBtn">THEMES</button>
+      </div>
+      <p class="credits">Press ENTER to Start</p>
+    </div>
+    <div id="controls-screen" class="screen hidden">
+      <h2>CONTROLS</h2>
+      <div class="control-list">
+        <div class="control-item"><span class="key">←→</span> Move</div>
+        <div class="control-item"><span class="key">SPACE</span> Jump</div>
+        <div class="control-item"><span class="key">Z</span> Whip Attack</div>
+        <div class="control-item"><span class="key">X</span> Sub-weapon</div>
+        <div class="control-item"><span class="key">↑</span> Enter Door</div>
+        <div class="control-item"><span class="key">↓</span> Crouch</div>
+        <div class="control-item"><span class="key">T</span> Toggle Theme</div>
+      </div>
+      <button id="backBtn">BACK</button>
+    </div>
+    <div id="theme-screen" class="screen hidden">
+      <h2>SELECT THEME</h2>
+      <div class="theme-grid">
+        <button class="theme-option" data-theme="classic">
+          <div class="theme-preview classic-preview"></div>
+          <span>Classic</span>
+        </button>
+        <button class="theme-option" data-theme="midnight">
+          <div class="theme-preview midnight-preview"></div>
+          <span>Midnight</span>
+        </button>
+        <button class="theme-option" data-theme="blood">
+          <div class="theme-preview blood-preview"></div>
+          <span>Blood Moon</span>
+        </button>
+        <button class="theme-option" data-theme="gameboy">
+          <div class="theme-preview gameboy-preview"></div>
+          <span>Game Boy</span>
+        </button>
+        <button class="theme-option" data-theme="sepia">
+          <div class="theme-preview sepia-preview"></div>
+          <span>Sepia</span>
+        </button>
+        <button class="theme-option" data-theme="neon">
+          <div class="theme-preview neon-preview"></div>
+          <span>Neon</span>
+        </button>
+      </div>
+      <button id="themeBackBtn">BACK</button>
+    </div>
+    <div id="game-over-screen" class="screen hidden">
+      <h1>GAME OVER</h1>
+      <p id="final-score">Score: 0</p>
+      <button id="retryBtn">TRY AGAIN</button>
+    </div>
+    <div id="hud">
+      <div class="hud-section">
+        <span class="hud-label">PLAYER</span>
+        <div class="health-bar">
+          <div id="health-fill" class="health-fill"></div>
+        </div>
+      </div>
+      <div class="hud-section">
+        <span class="hud-label">ENEMY</span>
+        <div class="health-bar enemy-bar">
+          <div id="enemy-health-fill" class="health-fill"></div>
+        </div>
+      </div>
+      <div class="hud-section stats">
+        <div class="stat">
+          <span class="stat-icon">♥</span>
+          <span id="hearts-count">5</span>
+        </div>
+        <div class="stat">
+          <span class="stat-icon">★</span>
+          <span id="score-count">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-icon">⚔</span>
+          <span id="subweapon-icon">-</span>
+        </div>
+        <div class="stat theme-indicator">
+          <span class="stat-icon">🎨</span>
+          <span id="theme-name">Classic</span>
+        </div>
+      </div>
+    </div>
+    <div id="theme-toast" class="theme-toast hidden">
+      <span id="toast-text">Theme: Classic</span>
+    </div>
+  </div>
+  <script src="js/themes.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/enemies.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/level.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
